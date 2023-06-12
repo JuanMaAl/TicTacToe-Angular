@@ -34,4 +34,10 @@ export class GameService {
     return board;
   }
 
+  get getBoard(){
+    return this.board;
+  }
+
+  set setBoard(board: any){
+    this.board = [...board];
 }
