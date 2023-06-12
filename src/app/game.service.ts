@@ -43,5 +43,17 @@ export class GameService {
 }
 
 changePlayerTurn(squareCliked: any){
+  this.updateBoard(squareCliked);
   if(!this.isGameOver) this.activePlayer = this.activePlayer === "X" ? "O" : "X";
+  this.turnCount++;
+  this.isGameOver = this.isGameOver ? true : false;
+}
+
+updateBoard(squareClicked: any){
+  this.board[squaredClicked.id].state = squareClicked.state;
+  if(this.winner){
+    this.winner = true;
+    this.isGameOver = false;
+    this.isGameOver = true;
+  }
 }
