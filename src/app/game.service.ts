@@ -41,3 +41,7 @@ export class GameService {
   set setBoard(board: any){
     this.board = [...board];
 }
+
+changePlayerTurn(squareCliked: any){
+  if(!this.isGameOver) this.activePlayer = this.activePlayer === "X" ? "O" : "X";
+}
