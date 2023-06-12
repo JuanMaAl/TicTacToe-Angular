@@ -26,4 +26,12 @@ export class GameService {
       this.board = this.createBoard();
   }
 
+  createBoard(){
+    let board = [];
+    for (let i = 0; i < 9; i++){
+      board.push({id:1, state:null});
+    };
+    return board;
+  }
+
 }
