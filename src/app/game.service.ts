@@ -60,6 +60,26 @@ updateBoard(squareClicked: any){
 
 get isWinner():boolean{
   return this.checkDiag() || this.checkRows(this.board, "row") || this.checkRows(this.board, "col") ? true : false;
+
 }//fin is Winner
+
+checkRows (board: any, mode:any){
+  const
+    ROW = mode === "row" ? true : false,
+    DIST = ROW ? 1 : 3,
+    NUMTIMES = ROW ? 7 : 3;
+
+    for (let i = 0; i < NUMTIMES; i += INC){
+      let 
+        firstSquare = board[i].state,
+        secondSquare = board[i + DIST].state,
+        thirdSquare = board[i + DIST * 2].state;
+
+        if(firstSquare && secondSquare && thirdSquare){
+          if(firstSquare === secondSquare && secondSquare === thirdSquare) return true;
+        } //fin if
+    }//fin for
+    return false;
+}//fin checkRows
 
 }//fin class GameService
