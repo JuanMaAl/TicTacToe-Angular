@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { GameService } from '../game.service';
 
 @Component({
@@ -7,9 +7,20 @@ import { GameService } from '../game.service';
   styleUrls: ['./square.component.css']
 })
 export class SquareComponent implements OnInit{
-  constructor(){ }
+  constructor( public gameService: GameService){ }
+
+  @Input() square: any;
 
   ngOnInit(): void {
       
+  }
+
+  changePlayer(){
+    this.gameService.isGameRunning = true;
+
+    if(this.gameService.isGameRunning && this.square.state === null) {
+      this.square.state = this.gameService.activePlayer;
+      this.gameService.changePlayerTurn(this.square);
+    }
   }
 }
