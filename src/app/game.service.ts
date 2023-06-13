@@ -67,6 +67,7 @@ checkRows (board: any, mode:any){
   const
     ROW = mode === "row" ? true : false,
     DIST = ROW ? 1 : 3,
+    INC = ROW ? 3 : 1,
     NUMTIMES = ROW ? 7 : 3;
 
     for (let i = 0; i < NUMTIMES; i += INC){
@@ -88,11 +89,11 @@ checkDiag() {
 
     for (let i = 0; i <= timesRun; i += 2){
       let
-        UpperCorner = this.board[i].state,
+        upperCorner = this.board[i].state,
         lowerCorner = this.board[8 - i].state;
 
-        if (midSquare && upperCorner && LowerCorner)
-          if (midSquare === UpperCorner && UpperCorner === lowerCorner) return true;
+        if (midSquare && upperCorner && lowerCorner)
+          if (midSquare === upperCorner && upperCorner === lowerCorner) return true;
     }//fin for
     return false;
 }//fin checkDiag
