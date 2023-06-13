@@ -82,4 +82,19 @@ checkRows (board: any, mode:any){
     return false;
 }//fin checkRows
 
+checkDiag() {
+  const timesRun = 2,
+    midSquare = this.board[4].state;
+
+    for (let i = 0; i <= timesRun; i += 2){
+      let
+        UpperCorner = this.board[i].state,
+        lowerCorner = this.board[8 - i].state;
+
+        if (midSquare && upperCorner && LowerCorner)
+          if (midSquare === UpperCorner && UpperCorner === lowerCorner) return true;
+    }//fin for
+    return false;
+}//fin checkDiag
+
 }//fin class GameService
