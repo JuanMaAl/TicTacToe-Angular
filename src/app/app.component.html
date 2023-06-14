@@ -36,7 +36,23 @@ to-blue-900">
   font-semibold"
   *ngIf = "gameService.winner">
   🏆 {{gameService.activePlayer}} ES EL VENCEDOR 🏆 
-</h2>
+  </h2>
+
+  <!-- reset the Game -->
+    <button class="
+    bg-purple-400
+    hover:bg-yellow-400
+    text-dark
+    font-bold
+    py-2
+    px-4
+    rounded
+    mx-auto
+    block
+    mt-5"
+    *ngIf = "gameService.isGameOver"
+    (click) = "resetGame()"
+    > Nueva Partida </button>
 
   </div>
 
