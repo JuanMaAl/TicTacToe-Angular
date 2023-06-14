@@ -21,7 +21,9 @@ to-blue-900">
   text-3xl
   mt-10
   font-bold"
-  *ngIf = "!gameService.winner">
+  *ngIf = "!gameService.winner"
+  [ngClass]="{'text-teal-300': gameService.activePlayer == 'O'}"
+  >
   TURNO DEL JUGADOR: {{gameService.activePlayer}}
   </h2>
 
