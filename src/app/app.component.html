@@ -21,8 +21,19 @@ to-blue-900">
   text-3xl
   mt-10
   font-bold">
-    TURNO DEL JUGADOR: {{gameService.activePlayer}}
+  &#9876; TURNO DEL JUGADOR: {{gameService.activePlayer}}
   </h2>
+
+  <!-- Winner Text -->
+  <h2 class="
+  text-center
+  text-red-500
+  mt-10
+  text-4xl
+  font-semibold"
+  *ngIf = "gameService.winner">
+  &#9886; {{gameService.activePlayer}} ES EL VENCEDOR &#9887; 
+</h2>
 
   </div>
 
