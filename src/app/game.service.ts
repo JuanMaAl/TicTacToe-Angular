@@ -53,7 +53,7 @@ updateBoard(squareClicked: any){
   this.board[squareClicked.id].state = squareClicked.state;
   if(this.isWinner){
     this.winner = true;
-    this.isGameOver = false;
+    this.isGameRunning = false;
     this.isGameOver = true;
   }//fin if
 }//fin updateBoard
@@ -63,7 +63,7 @@ get isWinner():boolean{
 
 }//fin is Winner
 
-checkRows (board: any, mode:any){
+checkRows (board: any, mode:any): boolean{
   const
     ROW = mode === "row" ? true : false,
     DIST = ROW ? 1 : 3,
