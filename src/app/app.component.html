@@ -20,7 +20,8 @@ to-blue-900">
   text-orange-600
   text-3xl
   mt-10
-  font-bold">
+  font-bold"
+  *ngIf = "!gameService.winner">
   TURNO DEL JUGADOR: {{gameService.activePlayer}}
   </h2>
 
