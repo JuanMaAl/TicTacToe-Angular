@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GameService } from './game.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'tic-tac-toe-angular';
+  constructor (public gameService: GameService) { }
+    
 }
