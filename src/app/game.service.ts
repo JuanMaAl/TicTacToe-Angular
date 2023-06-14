@@ -51,7 +51,7 @@ changePlayerTurn(squareCliked: any){
 
 updateBoard(squareClicked: any){
   this.board[squareClicked.id].state = squareClicked.state;
-  if(this.winner){
+  if(this.isWinner){
     this.winner = true;
     this.isGameOver = false;
     this.isGameOver = true;
